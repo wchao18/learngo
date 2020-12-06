@@ -8,6 +8,6 @@ func main() {
 	//
 	b := true
 	fmt.Println(b)
-	//输出数字变量的的类型:%T
+	//输出变量的的类型:%T
 	fmt.Printf("%T", b)
 }

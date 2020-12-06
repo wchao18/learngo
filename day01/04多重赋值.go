@@ -2,8 +2,7 @@ package main
 
 import "fmt"
 
-//方式一
-func main1() {
+func main01() {
 	//多重赋值变量个数和值的个数要一一对应
 	var a, b, c = 10, 2.3, "哈哈哈" //不同变量类型
 	var d, e, f = 30, 40, 50     //相同变量类型
@@ -11,25 +10,20 @@ func main1() {
 	fmt.Println(d, e, f)
 }
 
-//特殊用法
-func main() {
+//ps:特殊用法,可以重复定义变量
+func main02() {
 	a, b := 10, "哈哈"
-	//a, b := 10, "哈哈"//error
-	//在多重赋值的时候有新的变量可以用自动推导
-	//a, b, c := 10, "哈哈", 2.3 //correct
-	//匿名变量
-	_, a, b, c := 10, 20, "哈哈1", 2.3
-	fmt.Println(a, b, c)
-}
-
-//方式二
-func main2() {
-	a, b, c := 10, 2.3, "哈哈哈"
-	fmt.Println(a, b, c)
+	fmt.Println(a, b)
+	//如果左边定义了多个变量，则多个变量的组合中，只要有一个不同，如下，就能正常编译：
+	a, c, b := 10, 2.3, "test"
+	//匿名变量,除去匿名变量,其它变量只要出现在其它声明中，编译错误
+	//_, a, b, c := 10, 20, "哈哈1", 2.3 //error
+	_, a, b, c, d := 10, 20, "哈哈1", 2.3, 10 //correct
+	fmt.Println(a, b, c, d)
 }
 
 //数据交换方式1
-func main3() {
+func main03() {
 	a, b := 20, 30
 	tmp := a
 	a = b
@@ -38,7 +32,7 @@ func main3() {
 }
 
 //交换数据方式2
-func main4() {
+func main04() {
 	a, b := 20, 30
 	a, b = b, a
 	fmt.Println(a, b)

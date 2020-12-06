@@ -7,7 +7,8 @@ func main() {
 	var a float32 = 3.14
 	var b float64 = 3.14
 	fmt.Println(a, b)
-	fmt.Printf("%.20f", a) //correct
+	//保留20位有效数字
+	fmt.Printf("%.20f", a)
 	fmt.Println()
 	//%f默认保留6位小数,四舍五入,数据会更精确
 	fmt.Printf("%f,%f", a, b)
